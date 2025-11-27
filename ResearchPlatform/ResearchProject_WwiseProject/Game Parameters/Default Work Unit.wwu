@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{4364F1CC-E3B3-4088-8A81-53C2FB94031D}" SchemaVersion="123">
+	<GameParameters>
+		<WorkUnit Name="Default Work Unit" ID="{4364F1CC-E3B3-4088-8A81-53C2FB94031D}" PersistMode="Standalone">
+			<ChildrenList>
+				<GameParameter Name="Player_Yaw" ID="{CB486B96-1484-40E7-9CD9-3F320AF21649}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="0"/>
+						<Property Name="Max" Type="Real64" Value="360"/>
+					</PropertyList>
+				</GameParameter>
+				<GameParameter Name="Click_Pitch" ID="{93870C3F-9FB9-4F38-932C-E5C5E1507190}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="0"/>
+						<Property Name="Max" Type="Real64" Value="1200"/>
+						<Property Name="Min" Type="Real64" Value="-1200"/>
+					</PropertyList>
+				</GameParameter>
+				<GameParameter Name="Click_Amplitude" ID="{341AF56B-5C32-48F2-8CF4-2AF84FE82A31}"/>
+				<GameParameter Name="Footsteps_Amplitude" ID="{B03EA168-05AF-4A1C-B6DF-0E26C50CF2B4}"/>
+				<GameParameter Name="Footsteps_Pitch" ID="{34AEE630-4A71-491E-89DF-1BA360F31716}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="0"/>
+						<Property Name="Max" Type="Real64" Value="1200"/>
+						<Property Name="Min" Type="Real64" Value="-1200"/>
+					</PropertyList>
+				</GameParameter>
+				<GameParameter Name="Landmarks_Clock_Amplitude" ID="{553CF8D1-775E-4343-8CD7-89C5E8D0041B}"/>
+				<GameParameter Name="Landmarks_HVAC_Amplitude" ID="{CD3A456E-57C7-43D2-9DBF-36BA5D5C3AF0}"/>
+			</ChildrenList>
+		</WorkUnit>
+	</GameParameters>
+</WwiseDocument>
