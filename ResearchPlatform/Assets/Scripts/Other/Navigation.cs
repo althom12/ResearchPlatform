@@ -11,31 +11,61 @@ public class Navigation : MonoBehaviour
 
     void Start()
     {
-        player = gameObject.GetComponent<GameObject>();
+        player = this.gameObject;
         characterController = gameObject.GetComponent<CharacterController>();   
     }
 
     
     void Update()
     {
-        if(Input.GetKey(KeyCode.UpArrow))
+        if (!Input.GetKey(KeyCode.RightAlt))
         {
-            characterController.Move(characterController.transform.forward * Time.deltaTime * playerSpeed);
+            if (Input.GetKey(KeyCode.UpArrow))
+            {
+                characterController.Move(characterController.transform.forward * Time.deltaTime * playerSpeed);
+            }
+
+            if (Input.GetKey(KeyCode.LeftArrow))
+            {
+                characterController.Move(-characterController.transform.right * Time.deltaTime * playerSpeed);
+            }
+
+            if (Input.GetKey(KeyCode.DownArrow))
+            {
+                characterController.Move(-characterController.transform.forward * Time.deltaTime * playerSpeed);
+            }
+
+            if (Input.GetKey(KeyCode.RightArrow))
+            {
+                characterController.Move(characterController.transform.right * Time.deltaTime * playerSpeed);
+            }
         }
 
-        if (Input.GetKey(KeyCode.LeftArrow))
+        
+
+        if(Input.GetKey(KeyCode.RightAlt))
         {
-            characterController.Move(-characterController.transform.right * Time.deltaTime * playerSpeed);
+            if (Input.GetKey(KeyCode.UpArrow))
+            {
+                player.transform.eulerAngles = Vector3.zero;
+            }
+
+            if (Input.GetKey(KeyCode.LeftArrow))
+            {
+                player.transform.eulerAngles = new Vector3(0, -90, 0);
+            }
+
+            if (Input.GetKey(KeyCode.DownArrow))
+            {
+                player.transform.eulerAngles = new Vector3(0, -180, 0);
+            }
+
+            if (Input.GetKey(KeyCode.RightArrow))
+            {
+                player.transform.eulerAngles = new Vector3(0, 90, 0);
+            }
+
         }
 
-        if (Input.GetKey(KeyCode.DownArrow))
-        {
-            characterController.Move(-characterController.transform.forward * Time.deltaTime * playerSpeed);
-        }
-
-        if (Input.GetKey(KeyCode.RightArrow))
-        {
-            characterController.Move(characterController.transform.right * Time.deltaTime * playerSpeed);
-        }
     }
 }
