@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{B491F553-DEF4-4E6E-9D24-77784102CF9E}",
     "Language": "SFX",
-    "Hash": "{93AF60D0-5610-5663-5A25-36A7AFFA676A}",
+    "Hash": "{69392622-15AF-62AB-D0CF-79662410D0FD}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
     "ShortName": "Main",
     "Path": "Main.bnk",
@@ -188,6 +188,14 @@
       }
      ],
      "ShareSets": [
+      {
+       "Id": "3399505373",
+       "Name": "Reflect_Physically_Based",
+       "ObjectPath": "\\Effects\\Factory Reflect Physically-Based\\Reflect_Physically_Based",
+       "GUID": "{C69F5865-C206-4B45-BC40-315F3F39151A}",
+       "LibName": "Wwise Reflect",
+       "LibId": "11206659"
+      },
       {
        "Id": "3604890626",
        "Name": "High_Pass_60Hz",
@@ -483,7 +491,14 @@
       "Name": "SimpleReflect",
       "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\Ambisonic_Main_Mix\\SimpleReflect",
       "GUID": "{A834FFA5-6A50-486B-AADD-D440FB138642}",
-      "Color": "4"
+      "Color": "4",
+      "PluginRefs": {
+       "ShareSets": [
+        {
+         "Id": "3399505373"
+        }
+       ]
+      }
      },
      {
       "Id": "3311067494",
@@ -528,6 +543,6 @@
     ]
    }
   ],
-  "FileHash": "{50A033BE-65CB-D152-A412-113C03E32094}"
+  "FileHash": "{64BFF908-8378-3CD0-8D1E-96A11E465F0B}"
  }
 }

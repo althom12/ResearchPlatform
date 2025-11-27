@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}",
     "Language": "SFX",
-    "Hash": "{B15B6B08-81D8-F1ED-ADD6-64F3E0776DA5}",
+    "Hash": "{7420FD70-F442-52F2-39C5-EE1AF8A1C140}",
     "ObjectPath": "Init",
     "ShortName": "Init",
     "Path": "Init.bnk",
@@ -23,6 +23,16 @@
        "GUID": "{2CC423DB-F503-4B6E-96B3-1DB376F8629F}",
        "LibName": "Resonance Audio Renderer",
        "LibId": "6557955"
+      }
+     ],
+     "ShareSets": [
+      {
+       "Id": "3399505373",
+       "Name": "Reflect_Physically_Based",
+       "ObjectPath": "\\Effects\\Factory Reflect Physically-Based\\Reflect_Physically_Based",
+       "GUID": "{C69F5865-C206-4B45-BC40-315F3F39151A}",
+       "LibName": "Wwise Reflect",
+       "LibId": "11206659"
       }
      ],
      "AudioDevices": [
@@ -119,7 +129,14 @@
       "Name": "SimpleReflect",
       "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\Ambisonic_Main_Mix\\SimpleReflect",
       "GUID": "{A834FFA5-6A50-486B-AADD-D440FB138642}",
-      "Color": "4"
+      "Color": "4",
+      "PluginRefs": {
+       "ShareSets": [
+        {
+         "Id": "3399505373"
+        }
+       ]
+      }
      },
      {
       "Id": "3311067494",
@@ -1330,6 +1347,6 @@
     ]
    }
   ],
-  "FileHash": "{2351A30B-4ADD-499A-2FB1-C33F0CAE8E4D}"
+  "FileHash": "{C1429882-1DE4-53AE-A166-C641EE0FF494}"
  }
 }

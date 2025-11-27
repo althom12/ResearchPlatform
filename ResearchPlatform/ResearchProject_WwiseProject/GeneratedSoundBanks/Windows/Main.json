@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{B491F553-DEF4-4E6E-9D24-77784102CF9E}",
     "Language": "SFX",
-    "Hash": "{BF086C18-FA84-4908-C645-7FB0ED94A26A}",
+    "Hash": "{69392622-15AF-62AB-D0CF-79662410D0FD}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
     "ShortName": "Main",
     "Path": "Main.bnk",
@@ -48,14 +48,6 @@
       "CachePath": "6D/{6D9CF55A-8E36-6DD8-6BFA-C62F2A654B22}.wem"
      },
      {
-      "Id": "300588143",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Memory",
-      "ShortName": "BOOM Library IR - R&S\\Garage1_6m_Ambix_o3.wav",
-      "CachePath": "41/{41E3540B-6581-2688-844B-1C6834273462}.wem"
-     },
-     {
       "Id": "345466174",
       "Language": "SFX",
       "Streaming": "false",
@@ -78,14 +70,6 @@
       "Location": "Memory",
       "ShortName": "Collision.wav",
       "CachePath": "03/{0339539D-B4A4-DE01-61A1-86982B9D2C67}.wem"
-     },
-     {
-      "Id": "685116775",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Memory",
-      "ShortName": "BOOM Library IR - R&S\\Mausoleum1_Gallery_Ambix_o3.wav",
-      "CachePath": "2E/{2E54E46C-25F2-35D4-4C0C-EF75C3699968}.wem"
      },
      {
       "Id": "696266850",
@@ -205,38 +189,12 @@
      ],
      "ShareSets": [
       {
-       "Id": "1309861968",
-       "Name": "Mausoleum1_Gallery_Ambix_o3",
-       "ObjectPath": "\\Effects\\BOOM Library IR - R&S - HOA\\BOOM Library IR - R&S\\HOA\\Mausoleum\\Mausoleum1_Gallery_Ambix_o3",
-       "GUID": "{AB9BF9F9-7735-4F31-9933-D8D2D0A5621A}",
-       "LibName": "Wwise Convolution Reverb",
-       "LibId": "8323075",
-       "MediaRefs": [
-        {
-         "Id": "685116775"
-        }
-       ]
-      },
-      {
        "Id": "3399505373",
        "Name": "Reflect_Physically_Based",
        "ObjectPath": "\\Effects\\Factory Reflect Physically-Based\\Reflect_Physically_Based",
        "GUID": "{C69F5865-C206-4B45-BC40-315F3F39151A}",
        "LibName": "Wwise Reflect",
        "LibId": "11206659"
-      },
-      {
-       "Id": "3421951496",
-       "Name": "Garage1_6m_Ambix_o3",
-       "ObjectPath": "\\Effects\\BOOM Library IR - R&S - HOA\\BOOM Library IR - R&S\\HOA\\Garage 01\\Garage1_6m_Ambix_o3",
-       "GUID": "{094765E5-4A6C-4414-B3AB-C1776BA99C1C}",
-       "LibName": "Wwise Convolution Reverb",
-       "LibId": "8323075",
-       "MediaRefs": [
-        {
-         "Id": "300588143"
-        }
-       ]
       },
       {
        "Id": "3604890626",
@@ -526,14 +484,7 @@
       "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\Ambisonic_Main_Mix\\Ambisonic_Reverbs\\Hallway02_Ambi_Verb",
       "GUID": "{A99E3B76-79C5-482E-A7C1-01943ED52D06}",
       "Color": "4",
-      "MaxAttenuation": "100",
-      "PluginRefs": {
-       "ShareSets": [
-        {
-         "Id": "1309861968"
-        }
-       ]
-      }
+      "MaxAttenuation": "100"
      },
      {
       "Id": "903073294",
@@ -555,14 +506,7 @@
       "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\Ambisonic_Main_Mix\\Ambisonic_Reverbs\\Hallway01_Ambi_Verb",
       "GUID": "{7EEA5551-616A-43E4-950C-0C1277D1B60B}",
       "Color": "4",
-      "MaxAttenuation": "100",
-      "PluginRefs": {
-       "ShareSets": [
-        {
-         "Id": "3421951496"
-        }
-       ]
-      }
+      "MaxAttenuation": "100"
      }
     ],
     "GameParameters": [
@@ -599,6 +543,6 @@
     ]
    }
   ],
-  "FileHash": "{749A175D-2641-2A73-F486-37B3825084F0}"
+  "FileHash": "{2D072A09-3949-D555-18F2-F3B18C278350}"
  }
 }

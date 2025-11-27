@@ -44,9 +44,7 @@ Auxiliary Bus	ID	Name			Wwise Object Path	Notes
 
 Effect plug-ins	ID	Name	Type				Notes
 	798867357	Resonance Audio Renderer (Custom)	Resonance Audio Renderer			
-	1309861968	Mausoleum1_Gallery_Ambix_o3	Wwise Convolution Reverb			Impulse responses created by BOOM Library. © 2021 BOOM Library. All rights reserved.
 	3399505373	Reflect_Physically_Based	Wwise Reflect			
-	3421951496	Garage1_6m_Ambix_o3	Wwise Convolution Reverb			Impulse responses created by BOOM Library. © 2021 BOOM Library. All rights reserved.
 
 Audio Devices	ID	Name	Type				Notes
 	2317455096	No_Output	No Output			

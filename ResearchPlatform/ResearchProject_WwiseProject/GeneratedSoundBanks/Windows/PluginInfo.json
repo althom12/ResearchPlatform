@@ -18,13 +18,6 @@
     "StaticLib": "AkParametricEQFX"
    },
    {
-    "LibName": "Wwise Convolution Reverb",
-    "LibId": "8323075",
-    "Type": "Effect",
-    "DLL": "AkConvolutionReverb",
-    "StaticLib": "AkConvolutionReverbFX"
-   },
-   {
     "LibName": "Wwise Tremolo",
     "LibId": "8585219",
     "Type": "Effect",
@@ -49,6 +42,6 @@
     "Type": "AudioDevice"
    }
   ],
-  "FileHash": "{149799BD-7A95-1E8C-3271-DE20480EB8E5}"
+  "FileHash": "{EDB3DC90-0867-4008-96F8-BC1B331E39CF}"
  }
 }

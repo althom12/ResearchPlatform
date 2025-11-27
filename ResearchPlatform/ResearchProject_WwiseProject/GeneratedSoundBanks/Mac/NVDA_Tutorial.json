@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{C330E82C-4620-4661-A8C1-04F9E338EB42}",
     "Language": "SFX",
-    "Hash": "{79B25537-1430-C6DB-3F22-FB4550DCDEF1}",
+    "Hash": "{99E8A1D4-8C3D-B2D7-7A23-9BB69EDF5A58}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\NVDA_Tutorial",
     "ShortName": "NVDA_Tutorial",
     "Path": "NVDA_Tutorial.bnk",
@@ -722,6 +722,6 @@
     ]
    }
   ],
-  "FileHash": "{D333F5D3-B6FC-6283-CB9A-963842286F19}"
+  "FileHash": "{BF48F243-CE1B-0CDE-53AE-ACBED44C7920}"
  }
 }

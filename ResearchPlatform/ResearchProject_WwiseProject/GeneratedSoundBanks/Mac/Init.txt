@@ -44,6 +44,7 @@ Auxiliary Bus	ID	Name			Wwise Object Path	Notes
 
 Effect plug-ins	ID	Name	Type				Notes
 	798867357	Resonance Audio Renderer (Custom)	Resonance Audio Renderer			
+	3399505373	Reflect_Physically_Based	Wwise Reflect			
 
 Audio Devices	ID	Name	Type				Notes
 	2317455096	No_Output	No Output			
