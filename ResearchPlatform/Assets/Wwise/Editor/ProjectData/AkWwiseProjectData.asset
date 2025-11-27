@@ -20,12 +20,40 @@ MonoBehaviour:
       guid: 00000000000000000000000000000000
     - ElementName: Default Work Unit
       ObjectType: 12
-      guid: df14fedf7310c04887de98b65992fe1c
+      guid: 8dd9c1f7dc146d4ebfe22ed40cc1a04a
     ParentPath: Virtual Acoustics\Default Work Unit
-    guid: df14fedf7310c04887de98b65992fe1c
+    guid: 8dd9c1f7dc146d4ebfe22ed40cc1a04a
     GuidInternal: 
-    m_lastTime: -8584374331379006663
-    List: []
+    m_lastTime: -8584373730567464090
+    List:
+    - name: MegaAbsorb
+      guid: b5b40f142a16f5448e35587dfe65ec4d
+      id: 3507608964
+      PathAndIcons:
+      - ElementName: Virtual Acoustics
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 8dd9c1f7dc146d4ebfe22ed40cc1a04a
+      - ElementName: MegaAbsorb
+        ObjectType: 15
+        guid: b5b40f142a16f5448e35587dfe65ec4d
+      Path: Virtual Acoustics\Default Work Unit\MegaAbsorb
+    - name: MegaReflect
+      guid: 61554a1f0a485e44a39984bbe046c3df
+      id: 964098434
+      PathAndIcons:
+      - ElementName: Virtual Acoustics
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 8dd9c1f7dc146d4ebfe22ed40cc1a04a
+      - ElementName: MegaReflect
+        ObjectType: 15
+        guid: 61554a1f0a485e44a39984bbe046c3df
+      Path: Virtual Acoustics\Default Work Unit\MegaReflect
   - PhysicalPath: Virtual Acoustics\Factory Acoustic Textures.wwu
     PathAndIcons:
     - ElementName: Virtual Acoustics
@@ -404,7 +432,7 @@ MonoBehaviour:
     m_lastTime: -8584374331379006663
     List: []
   ExpandedFileSystemItemIds: 020000000300000004000000080000002100000022000000
-  ExpandedWaapiItemIds: 06000000070000000a0000002100000022000000
+  ExpandedWaapiItemIds: 06000000070000000a000000210000002200000031000000320000003400000035000000
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
   currentDataSource: 0

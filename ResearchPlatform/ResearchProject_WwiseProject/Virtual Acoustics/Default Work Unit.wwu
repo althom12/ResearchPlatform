@@ -11,6 +11,7 @@
 						<Property Name="AbsorptionMidLow" Type="Real32" Value="100"/>
 					</PropertyList>
 				</AcousticTexture>
+				<AcousticTexture Name="MegaReflect" ID="{1F4A5561-480A-445E-A399-84BBE046C3DF}"/>
 			</ChildrenList>
 		</WorkUnit>
 	</VirtualAcoustics>

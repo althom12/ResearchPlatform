@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}",
     "Language": "SFX",
-    "Hash": "{3943F5DA-C239-6342-8BFB-1F40B42679A3}",
+    "Hash": "{CE3B3221-E626-AD3F-A421-F642797978E7}",
     "ObjectPath": "Init",
     "ShortName": "Init",
     "Path": "Init.bnk",
@@ -938,6 +938,39 @@
       ]
      },
      {
+      "Id": "964098434",
+      "Name": "MegaReflect",
+      "ObjectPath": "\\Virtual Acoustics\\Default Work Unit\\MegaReflect",
+      "GUID": "{1F4A5561-480A-445E-A399-84BBE046C3DF}",
+      "Properties": [
+       {
+        "Name": "AbsorptionLow",
+        "Type": "Real32",
+        "Value": "0"
+       },
+       {
+        "Name": "AbsorptionMidLow",
+        "Type": "Real32",
+        "Value": "0"
+       },
+       {
+        "Name": "AbsorptionMidHigh",
+        "Type": "Real32",
+        "Value": "0"
+       },
+       {
+        "Name": "AbsorptionHigh",
+        "Type": "Real32",
+        "Value": "0"
+       },
+       {
+        "Name": "Scattering",
+        "Type": "Real32",
+        "Value": "0"
+       }
+      ]
+     },
+     {
       "Id": "1755085759",
       "Name": "Wood_Deep",
       "ObjectPath": "\\Virtual Acoustics\\Factory Acoustic Textures\\Textures\\Wood_Deep",
@@ -1347,6 +1380,6 @@
     ]
    }
   ],
-  "FileHash": "{0126F46D-015D-E8F8-66BE-07EA57195252}"
+  "FileHash": "{BD05F396-0225-17A2-2DCE-95B8B23F3C2A}"
  }
 }
