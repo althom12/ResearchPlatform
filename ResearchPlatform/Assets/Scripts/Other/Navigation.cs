@@ -9,6 +9,9 @@ public class Navigation : MonoBehaviour
     [SerializeField]
     private float playerSpeed = 2.5f;
 
+    [SerializeField]
+    private Transform[] spawnPoints;
+
     void Start()
     {
         player = this.gameObject;
@@ -18,6 +21,8 @@ public class Navigation : MonoBehaviour
     
     void Update()
     {
+
+        // Arrow key navigation
         if (!Input.GetKey(KeyCode.RightAlt))
         {
             if (Input.GetKey(KeyCode.UpArrow))
@@ -41,9 +46,10 @@ public class Navigation : MonoBehaviour
             }
         }
 
-        
 
-        if(Input.GetKey(KeyCode.RightAlt))
+
+        // snap turn rotation to the 4 cardinal axes
+        if (Input.GetKey(KeyCode.RightAlt))
         {
             if (Input.GetKey(KeyCode.UpArrow))
             {
@@ -66,6 +72,30 @@ public class Navigation : MonoBehaviour
             }
 
         }
+
+
+        // Spawning Mechanism
+        if(Input.GetKey(KeyCode.Keypad0))
+        {
+            player.transform.position = spawnPoints[0].position;
+            player.transform.rotation = spawnPoints[0].rotation;    
+        }
+
+        if (Input.GetKey(KeyCode.Keypad1))
+        {
+            player.transform.position = spawnPoints[1].position;
+            player.transform.rotation = spawnPoints[1].rotation;
+        }
+
+        //Changing gaze using the mouse
+        Vector2 mouseGaze = new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
+
+
+        float yaw = mouseGaze.x;
+        float pitch = -mouseGaze.y;  //negative sign because Unity's coordinate system and mouse input move in opposite directions
+
+        player.transform.rotation *= Quaternion.Euler(0, yaw, 0);
+        player.transform.GetChild(0).transform.localRotation *= Quaternion.Euler(pitch, 0, 0);
 
     }
 }
