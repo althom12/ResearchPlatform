@@ -13,6 +13,9 @@ public class Navigation : MonoBehaviour
     private Transform[] spawnPoints;
 
     private float pitch = 0f;
+
+    [SerializeField]
+    private bool wasdMovement = false;
     void Start()
     {
         player = this.gameObject;
@@ -42,6 +45,30 @@ public class Navigation : MonoBehaviour
             }
 
             if (Input.GetKey(KeyCode.RightArrow))
+            {
+                characterController.Move(characterController.transform.right * Time.deltaTime * playerSpeed);
+            }
+        }
+
+        //WASD-based navigation for testing efficiency
+        if(wasdMovement)
+        {
+            if (Input.GetKey(KeyCode.W))
+            {
+                characterController.Move(characterController.transform.forward * Time.deltaTime * playerSpeed);
+            }
+
+            if (Input.GetKey(KeyCode.A))
+            {
+                characterController.Move(-characterController.transform.right * Time.deltaTime * playerSpeed);
+            }
+
+            if (Input.GetKey(KeyCode.S))
+            {
+                characterController.Move(-characterController.transform.forward * Time.deltaTime * playerSpeed);
+            }
+
+            if (Input.GetKey(KeyCode.D))
             {
                 characterController.Move(characterController.transform.right * Time.deltaTime * playerSpeed);
             }
