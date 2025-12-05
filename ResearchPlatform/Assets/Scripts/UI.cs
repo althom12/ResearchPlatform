@@ -1,18 +1,20 @@
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class UI : MonoBehaviour
 {
 
     public GameObject[] pages;
-    //public GameObject[] UIParents;
+    public GameObject[] UIParents;
     public Button[] levelOneButtons;
-    //public Button[] levelTwoButtons;
+    public Button[] levelTwoButtons;
    
 
     //public GameObject[] sliders;
-    private bool isPage1Open = false;
-    private bool isPage2Open = false;
+    //private bool isPage1Open = false;
+    //private bool isPage2Open = false;
+    private bool[] isPageOpen = {false, false};
 
     private int page1OptionIndex;
     private int prevPage1OptionIndex;
@@ -27,26 +29,55 @@ public class UI : MonoBehaviour
     [SerializeField]
     private GameObject player, mainMaze;
 
+    // array of functions to bind each on click event method to its corresponding button
+    private UnityAction[] levelOneFunctions;
+    private UnityAction[] levelTwoFunctions;
+
     void Start()
     {
-        isPage1Open = true;
+
         //Disable main maze and player at start
     }
 
     private void Awake()
     {
-        levelOneButtons[0].onClick.AddListener(OnStartButtonPress);
-        levelOneButtons[1].onClick.AddListener(OnTutorialItemsButtonPress);
-        levelOneButtons[2].onClick.AddListener(OnSaveSettingsButtonPress);
+        levelOneFunctions = new UnityAction[]
+        {
+            OnStartButtonPress,
+            OnTutorialItemsButtonPress,
+            OnSaveSettingsButtonPress
+        };
+
+        levelTwoFunctions = new UnityAction[]
+        {
+
+        };
+
+        for (int i = 0; i < levelOneButtons.Length; i++)
+        {
+            int index = i;
+            levelOneButtons[index].onClick.AddListener(levelOneFunctions[index]);
+        }
+
+
+        levelOneButtons[0].image.color = color[1];
+        prevPage1OptionIndex = 0;
+
+        levelTwoButtons[0].image.color = color[1];
+        prevPage2OptionIndex = 0;
+
+
     }
 
     private void OnEnable()
     {
+        isPageOpen[0] = true;
         player.GetComponent<Navigation>().enabled = false;  
         player.GetComponent<CompassController>().enabled = false;  
         player.GetComponent<EcholocationClick>().enabled = false;  
         mainMaze.SetActive(false);
         page1OptionIndex = prevPage1OptionIndex;
+        page2OptionIndex = prevPage2OptionIndex;
     }
 
     private void OnDisable()
@@ -77,43 +108,61 @@ public class UI : MonoBehaviour
     }
 
   // Method to enable/disable pages
-    private void Pagecontroller(int i, int j)
+    private void PageController(int i, int j)
     {
         pages[i].SetActive(false);
         pages[j].SetActive(true);
+        isPageOpen[i] = false;
+        isPageOpen[j] = true;
     }
 
+    private void UIParentController()
+    {
+
+    }
+
+  // On click button events for Page 1
     public void OnStartButtonPress()
     {
-        Pagecontroller(0, 1);
+        PageController(0, 1);
     }
 
     public void OnTutorialItemsButtonPress()
     {
-        Pagecontroller(0, 2);
+        PageController(0, 2);
     }
 
     public void OnSaveSettingsButtonPress()
     {
-        Pagecontroller(0, 3);
+        PageController(0, 3);
     }
 
 
-    // Categories Page
+    // On click button events for Page 2 (Categories Page)
+
+    public void OnStartMenuPress()
+    {
+        PageController(1, 0);
+    }
+
+    public void OnEcholocatorClickPress()
+    {
+        UIParents[0].SetActive(true);
+    }
 
 
 
     void Update()
     {
-        if(isPage1Open)
+        if (isPageOpen[0])
         {
            
 
            if(Input.GetKeyDown(KeyCode.DownArrow))
             {
-                if(page1OptionIndex < 2)
+                if(page1OptionIndex < (levelOneButtons.Length-1))
                 {
-                    page1OptionIndex++;     //2A847F 42 132 126
+                    page1OptionIndex++;     
 
                 }
 
@@ -134,6 +183,61 @@ public class UI : MonoBehaviour
 
             }
 
+            if(Input.GetKeyDown(KeyCode.Tab))
+            {
+                for(int i = 0; i < levelOneButtons.Length; i++)
+                {
+                    levelOneFunctions[page1OptionIndex]();
+                }
+            }
+
+           
+        }
+
+        if (isPageOpen[1])
+        {
+
+            if (Input.GetKeyDown(KeyCode.DownArrow))
+            {
+                if (page2OptionIndex < (levelTwoButtons.Length - 1))
+                {
+                    page2OptionIndex++;     
+
+                }
+
+                OptionSelector(page2OptionIndex, ref prevPage2OptionIndex, levelTwoButtons);
+
+            }
+
+            if (Input.GetKeyDown(KeyCode.UpArrow))
+            {
+                if (page2OptionIndex > 0)
+                {
+                    page2OptionIndex--;
+
+                }
+
+                OptionSelector(page2OptionIndex, ref prevPage2OptionIndex, levelTwoButtons);
+
+            }
+        }
+
+
+
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            if (Input.GetKeyDown(KeyCode.Tab))
+            {
+                if (isPageOpen[0])
+                {
+                    return;
+                }
+
+                if (isPageOpen[1])
+                {
+                    PageController(1, 0);
+                }
+            }
         }
     }
 }
