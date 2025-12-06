@@ -50,6 +50,7 @@ public class UI : MonoBehaviour
 
         levelTwoFunctions = new UnityAction[]
         {
+            OnStartMenuPress,
             OnEcholocatorClickPress,
             OnObstaclesPress,
             OnEnvironmentPress,
@@ -126,14 +127,39 @@ public class UI : MonoBehaviour
         isPageOpen[j] = true;
     }
 
-    private void UIParentController()
+    private void UIParentController(int indexOfInterest)
     {
+        for(int i = 0; i < levelTwoButtons.Length; i++)
+        {
+            if (i == indexOfInterest)
+            {
+                levelTwoButtons[i].gameObject.SetActive(true);
+                UIParents[i].SetActive(true);
 
+            }
+
+            else
+            {
+                levelTwoButtons[i].gameObject.SetActive(false);
+                UIParents[i].SetActive(false);
+            }
+        }
+    }
+
+    private void backToCategories()
+    {
+        for(int i = 0; i < UIParents.Length; i++)
+        {
+            UIParents[i].gameObject.SetActive(false);
+            levelTwoButtons[i].gameObject.SetActive(true);
+
+        }
     }
 
   // On click button events for Page 1
     public void OnStartButtonPress()
     {
+        
         PageController(0, 1);
     }
 
@@ -149,71 +175,72 @@ public class UI : MonoBehaviour
 
 
     // On click button events for Page 2 (Categories Page)
-
     public void OnStartMenuPress()
     {
+        Debug.Log("Inside fn");
         PageController(1, 0);
     }
 
     public void OnEcholocatorClickPress()
     {
-        UIParents[0].SetActive(true);
+        UIParentController(1);
     }
 
     public void OnObstaclesPress()
     {
-        UIParents[0].SetActive(true);
+        UIParentController(2);
     }
 
     public void OnEnvironmentPress()
     {
-        UIParents[0].SetActive(true);
+        UIParentController(3);
     }
 
     public void OnLocomotionPress()
     {
-        UIParents[0].SetActive(true);
+        UIParentController(4);
     }
 
     public void OnAudioLandmarksPress()
     {
-        UIParents[0].SetActive(true);
+        UIParentController(5);
     }
 
     public void OnAudioCrumbsPress()
     {
-        UIParents[0].SetActive(true);
+        UIParentController(6);
     }
 
     public void OnTutorialItemsPress()
     {
-        UIParents[0].SetActive(true);
+        UIParentController(7);
     }
 
     public void OnAcousticConfigurationPress()
     {
-        UIParents[0].SetActive(true);
+        UIParentController(8);
     }
 
     public void OnEnvironmentLabPress()
     {
-        UIParents[0].SetActive(true);
+        UIParentController(9);
     }
 
     public void OnDebugAndAnalysisPress()
     {
-        UIParents[0].SetActive(true);
+        UIParentController(10);
     }
 
     public void OnMixingPress()
     {
-        UIParents[0].SetActive(true);
+        UIParentController(11);
     }
 
 
 
     void Update()
     {
+        // For Page 1
         if (isPageOpen[0])
         {
            
@@ -245,15 +272,19 @@ public class UI : MonoBehaviour
 
             if(Input.GetKeyDown(KeyCode.Tab))
             {
-                for(int i = 0; i < levelOneButtons.Length; i++)
-                {
-                    levelOneFunctions[page1OptionIndex]();
-                }
+                //for(int i = 0; i < levelOneButtons.Length; i++)
+                //{
+                //    levelOneFunctions[page1OptionIndex]();
+                //}
+
+                levelOneFunctions[page1OptionIndex]();
             }
 
            
         }
 
+        
+        // For Page 2
         if (isPageOpen[1])
         {
 
@@ -280,24 +311,52 @@ public class UI : MonoBehaviour
                 OptionSelector(page2OptionIndex, ref prevPage2OptionIndex, levelTwoButtons);
 
             }
-        }
 
-
-
-        if (Input.GetKey(KeyCode.LeftShift))
-        {
             if (Input.GetKeyDown(KeyCode.Tab))
             {
-                if (isPageOpen[0])
-                {
-                    return;
-                }
+             
+                    levelTwoFunctions[page2OptionIndex]();
+                
+            }
 
-                if (isPageOpen[1])
+            if (Input.GetKey(KeyCode.LeftShift))
+            {
+                if (Input.GetKeyDown(KeyCode.Tab))
                 {
-                    PageController(1, 0);
+                    
+
+                    if (isPageOpen[1])
+                    {
+                        // Check if any of the UIParent game objects are active in the hierarchy
+
+                        bool isActiveUIParent = false;
+
+                        for(int i = 0; i < UIParents.Length; i++)
+                        {
+                            if (UIParents[i].gameObject.activeSelf)
+                            {
+                                isActiveUIParent = true;
+                                
+                            }                         
+                        }
+
+                        if(isActiveUIParent)
+                        {
+                            backToCategories();
+                        }
+                        else
+                        {
+                            PageController(1, 0);
+                        }
+
+                    }
                 }
             }
+
         }
+
+
+
+       
     }
 }
