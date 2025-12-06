@@ -16,14 +16,53 @@ public class Navigation : MonoBehaviour
 
     [SerializeField]
     private bool wasdMovement = false;
+
+
+    [Header("Audio")]
+    public AK.Wwise.Event FootstepSound;
+    [SerializeField]
+    private float footstepInterval = 0.5f;
+    private float _footstepTimer;
+
+
+
     void Start()
     {
         player = this.gameObject;
-        characterController = gameObject.GetComponent<CharacterController>();   
+        characterController = gameObject.GetComponent<CharacterController>();
+
+        // "Charge" the timer so the very first step plays immediately upon input
+        _footstepTimer = footstepInterval;
     }
 
-    
-    void Update()
+
+    // NEW FUNCTION FOR FOOTSTEP AUDIO 
+    private void HandleFootsteps()
+    {
+        // Check if we are actually moving (magnitude > 0)
+        // We use velocity so running into a wall doesn't play sounds
+        if (characterController.velocity.sqrMagnitude > 0.1f)
+        {
+            _footstepTimer += Time.deltaTime;
+
+            if (_footstepTimer >= footstepInterval)
+            {
+                FootstepSound.Post(gameObject);
+                Debug.Log("Footstep");
+                _footstepTimer = 0f;
+            }
+        }
+        else
+        {
+            // When stopped, reset timer to the interval.
+            // This ensures the NEXT time you move, the sound plays immediately (0 delay).
+            _footstepTimer = footstepInterval;
+        }
+    }
+
+
+
+        void Update()
     {
 
         // Arrow key navigation
@@ -127,6 +166,10 @@ public class Navigation : MonoBehaviour
 
         player.transform.rotation *= Quaternion.Euler(0, yawInput, 0);
         player.transform.GetChild(0).transform.localRotation = Quaternion.Euler(pitch, 0, 0);
+
+
+
+        HandleFootsteps();
 
     }
 }

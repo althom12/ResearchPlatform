@@ -50,7 +50,17 @@ public class UI : MonoBehaviour
 
         levelTwoFunctions = new UnityAction[]
         {
-
+            OnEcholocatorClickPress,
+            OnObstaclesPress,
+            OnEnvironmentPress,
+            OnLocomotionPress,
+            OnAudioLandmarksPress,
+            OnAudioCrumbsPress,
+            OnTutorialItemsPress,
+            OnAcousticConfigurationPress,
+            OnEnvironmentLabPress,
+            OnDebugAndAnalysisPress,
+            OnMixingPress
         };
 
         for (int i = 0; i < levelOneButtons.Length; i++)
@@ -146,6 +156,56 @@ public class UI : MonoBehaviour
     }
 
     public void OnEcholocatorClickPress()
+    {
+        UIParents[0].SetActive(true);
+    }
+
+    public void OnObstaclesPress()
+    {
+        UIParents[0].SetActive(true);
+    }
+
+    public void OnEnvironmentPress()
+    {
+        UIParents[0].SetActive(true);
+    }
+
+    public void OnLocomotionPress()
+    {
+        UIParents[0].SetActive(true);
+    }
+
+    public void OnAudioLandmarksPress()
+    {
+        UIParents[0].SetActive(true);
+    }
+
+    public void OnAudioCrumbsPress()
+    {
+        UIParents[0].SetActive(true);
+    }
+
+    public void OnTutorialItemsPress()
+    {
+        UIParents[0].SetActive(true);
+    }
+
+    public void OnAcousticConfigurationPress()
+    {
+        UIParents[0].SetActive(true);
+    }
+
+    public void OnEnvironmentLabPress()
+    {
+        UIParents[0].SetActive(true);
+    }
+
+    public void OnDebugAndAnalysisPress()
+    {
+        UIParents[0].SetActive(true);
+    }
+
+    public void OnMixingPress()
     {
         UIParents[0].SetActive(true);
     }
